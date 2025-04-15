@@ -1,13 +1,23 @@
+import React from "react";
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos, onRemove }) {
+export default function TodoList({
+  tasks,
+  toggleComplete,
+  removeTask,
+  editTask,
+}) {
   return (
     <ul className="todo-list">
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onRemove={onRemove} />
+      {tasks.map((task) => (
+        <TodoItem
+          key={task.id}
+          task={task}
+          toggleComplete={toggleComplete}
+          removeTask={removeTask}
+          editTask={editTask}
+        />
       ))}
     </ul>
   );
 }
-
-export default TodoList;

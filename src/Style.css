@@ -1,0 +1,279 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Modern clean font */
+  background: linear-gradient(
+    135deg,
+    #2e3c72,
+    #1e2341
+  ); /* Elegant blue gradient */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Container Styling */
+.container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Container Hover Effect */
+.container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333333; /* Dark gray for better contrast */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Input and Button Styling */
+input,
+select,
+button {
+  font-size: 1.2rem;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  margin: 12px 0;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+/* Focus Input and Button Effects */
+input:focus,
+select:focus,
+button:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 8px rgba(100, 181, 246, 0.5);
+}
+
+/* Button Styles */
+button {
+  background-color: #64b5f6; /* Blue */
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #42a5f5; /* Darker blue */
+  transform: translateY(-3px);
+}
+
+button:active {
+  background-color: #1e88e5; /* Even darker blue */
+  transform: translateY(0);
+}
+
+/* Search Input */
+.search input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  background-color: #fff;
+  border: 2px solid #64b5f6;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.search input:focus {
+  box-shadow: 0 0 8px rgba(100, 181, 246, 0.5);
+  border-color: #64b5f6;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    145deg,
+    #f4f7fc,
+    #e8eff7
+  ); /* Soft gradient for tasks */
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Completed Task */
+li.completed {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  text-decoration: line-through;
+}
+
+/* Task Text */
+li .task-text {
+  flex-grow: 1;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+li .task-text:hover {
+  color: #42a5f5; /* Blue hover effect on task text */
+}
+
+/* Action Button Styling */
+li .actions button {
+  background-color: #ff7043; /* Coral for delete */
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+li .actions button:hover {
+  background-color: #ff5722; /* Darker coral on hover */
+  transform: translateY(-3px);
+}
+
+li .actions button:active {
+  background-color: #e64a19; /* Even darker coral on click */
+  transform: translateY(0);
+}
+
+/* Priority Color Coding */
+.high-priority {
+  background-color: #e57373; /* Red for high priority */
+  color: white;
+}
+
+.medium-priority {
+  background-color: #ffb74d; /* Orange for medium priority */
+  color: white;
+}
+
+.low-priority {
+  background-color: #81c784; /* Green for low priority */
+  color: white;
+}
+
+/* Dark Mode */
+.dark {
+  background: #121212;
+  color: #fff;
+}
+
+.dark .container {
+  background-color: #333;
+}
+
+.dark h1 {
+  color: #64b5f6;
+}
+
+.dark li {
+  background: linear-gradient(145deg, #333, #444);
+}
+
+.dark li.completed {
+  background-color: #555;
+}
+
+.dark li .task-text {
+  color: #e0e0e0;
+}
+
+.dark .task-item .actions button {
+  background-color: #ff5722;
+}
+
+.dark .task-item .actions button:hover {
+  background-color: #e64a19;
+}
+
+.dark .task-item .actions button:active {
+  background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .task-item .task-text {
+    font-size: 1rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-item .actions {
+    margin-top: 10px;
+  }
+
+  .search input {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 1rem;
+  }
+
+  button,
+  input {
+    padding: 10px;
+  }
+}
